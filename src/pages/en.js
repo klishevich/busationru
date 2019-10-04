@@ -2,16 +2,15 @@ import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 
 import Layout from "../components/layout";
-import Image from "../components/image";
 import SEO from "../components/seo";
-import Header from "../components/header";
+import Header from "../components/header"
 
-const IndexPage = () => {
+const SecondPage = () => {
   const data = useStaticQuery(graphql`
-    query IndexPageRuQuery {
+    query IndexPageEnQuery {
       site {
         siteMetadata {
-          ru {
+          en {
             title
           }
         }
@@ -19,11 +18,11 @@ const IndexPage = () => {
     }
   `);
 
-  const { title } = data.site.siteMetadata.ru;
+  const { title } = data.site.siteMetadata.en;
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Page two" />
       <Header siteTitle={title} />
       <div
         style={{
@@ -33,15 +32,11 @@ const IndexPage = () => {
         }}
       >
         <h1>{title}</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-          <Image />
-        </div>
-        <Link to="/en">Go to page EN</Link>
+        <p>Welcome to page EN</p>
+        <Link to="/">Go back to the homepage</Link>
       </div>
     </Layout>
   );
 };
 
-export default IndexPage;
+export default SecondPage;

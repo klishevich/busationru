@@ -5,48 +5,61 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
+import Header from "./header";
+import "./layout.css";
+import { ThemeProvider } from "@material-ui/styles";
+import { createMuiTheme } from "@material-ui/core";
 
-import Header from "./header"
-import "./layout.css"
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      // light: will be calculated from palette.primary.main,
+      main: "#1976d2"
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+    secondary: {
+      light: "#0066ff",
+      main: "#0044ff",
+      // dark: will be calculated from palette.secondary.main,
+      contrastText: "#ffcc00"
+    }
+    // error: will use the default color
+  }
+});
 
-const Layout = ({ children }) => {
+const Layout = props => {
+  const { children } = props;
+  console.log(111, props);
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
+          ru {
+            title
+          }
         }
       }
     }
-  `)
+  `);
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+    <ThemeProvider theme={theme}>
+      <main>{children}</main>
+      <footer style={{ maxWidth: 960, padding: `0px 1.0875rem 1.45rem` }}>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
+    </ThemeProvider>
+  );
+};
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  children: PropTypes.node.isRequired
+};
 
-export default Layout
+export default Layout;
