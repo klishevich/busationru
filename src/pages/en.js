@@ -1,11 +1,27 @@
 import React from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
+
+import FormatPaintIcon from "@material-ui/icons/FormatPaint";
+import WorkIcon from "@material-ui/icons/Work";
+import SportsKabaddiIcon from "@material-ui/icons/SportsKabaddi";
+import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
+import CallIcon from "@material-ui/icons/Call";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Header from "../components/header"
+import Header from "../components/header";
+import ContentRu from "../components/contentRu"
+import Footer from "../components/footer";
 
-const SecondPage = () => {
+const menuItems = [
+  { id: "services", name: "Services", iconComponent: FormatPaintIcon },
+  { id: "portfolio", name: "Portfolio", iconComponent: WorkIcon },
+  { id: "team", name: "Team", iconComponent: SportsKabaddiIcon },
+  { id: "values", name: "Values", iconComponent: InsertEmoticonIcon },
+  { id: "contacts", name: "Contacts", iconComponent: CallIcon }
+];
+
+const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query IndexPageEnQuery {
       site {
@@ -22,21 +38,12 @@ const SecondPage = () => {
 
   return (
     <Layout>
-      <SEO title="Page two" />
-      <Header siteTitle={title} languageEn={true} />
-      <div
-        style={{
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 30
-        }}
-      >
-        <h1>{title}</h1>
-        <p>Welcome to page EN</p>
-        <Link to="/">Go back to the homepage</Link>
-      </div>
+      <SEO title="test test title" description="test test desc" />
+      <Header title={title} languageEn={true} drawerMenuItems={menuItems} />
+      <ContentRu title={title}/>
+      <Footer />
     </Layout>
   );
 };
 
-export default SecondPage;
+export default IndexPage;

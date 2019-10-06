@@ -1,10 +1,25 @@
 import React from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
+
+import FormatPaintIcon from "@material-ui/icons/FormatPaint";
+import WorkIcon from "@material-ui/icons/Work";
+import SportsKabaddiIcon from "@material-ui/icons/SportsKabaddi";
+import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
+import CallIcon from "@material-ui/icons/Call";
 
 import Layout from "../components/layout";
-import Image from "../components/image";
 import SEO from "../components/seo";
 import Header from "../components/header";
+import ContentRu from "../components/contentRu";
+import Footer from "../components/footer";
+
+const menuItems = [
+  { id: "services", name: "Услуги", iconComponent: FormatPaintIcon },
+  { id: "portfolio", name: "Портфолио", iconComponent: WorkIcon },
+  { id: "team", name: "Команда", iconComponent: SportsKabaddiIcon },
+  { id: "values", name: "Ценности", iconComponent: InsertEmoticonIcon },
+  { id: "contacts", name: "Контакты", iconComponent: CallIcon }
+];
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -23,23 +38,10 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
-      <Header siteTitle={title} />
-      <div
-        style={{
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 30
-        }}
-      >
-        <h1>{title}</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-          <Image />
-        </div>
-        <Link to="/en">Go to page EN</Link>
-      </div>
+      <SEO title="Разработка React и Node.js в Москве" description="Компания Бизнес-Оптимизация предлагает услуги React, Node.js, мобильная разработка iOS, Android, DevOps, анализ данных и машинное обучение в Москве" />
+      <Header title={title} drawerMenuItems={menuItems} />
+      <ContentRu title={title} />
+      <Footer />
     </Layout>
   );
 };

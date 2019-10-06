@@ -20,82 +20,82 @@ import LanguageIcon from "@material-ui/icons/Language";
 import MenuIcon from "@material-ui/icons/Menu";
 import ArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import FormatPaintIcon from "@material-ui/icons/FormatPaint";
-import WorkIcon from "@material-ui/icons/Work";
-import SportsKabaddiIcon from "@material-ui/icons/SportsKabaddi";
-import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
-import CallIcon from "@material-ui/icons/Call";
 
 import { useStyles } from "./headerStyles";
 
 export default function Header(props) {
-  const { siteTitle } = props;
+  const { title } = props;
   const classes = useStyles();
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [languageAnchorEl, setLanguageAnchorEl] = React.useState(null);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget);
+  const openLanguageDropdown = event => {
+    setLanguageAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  const closeLanguageDropdown = () => {
+    setLanguageAnchorEl(null);
   };
 
-  const handleMenuClick = path => () => {
-    setAnchorEl(null);
+  const changeLanguage = path => () => {
+    setLanguageAnchorEl(null);
     navigate(path, { replace: true });
   };
 
-  const handleDrawerOpen = () => {
+  const openDrawer = () => {
     setDrawerOpen(true);
   };
 
-  const handleDrawerClose = () => {
+  const closeDrawer = () => {
     setDrawerOpen(false);
+  };
+
+  const openPageSection = sectionId => () => {
+    setDrawerOpen(false);
+    navigate(`/#${sectionId}`, { replace: true });
   };
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
-            onClick={handleDrawerOpen}
+            onClick={openDrawer}
           >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            {siteTitle}
+            {title}
           </Typography>
           <Button
             color="inherit"
             aria-controls="simple-menu"
             aria-haspopup="true"
-            onClick={handleClick}
+            onClick={openLanguageDropdown}
           >
             <LanguageIcon />
             <ArrowDownIcon />
           </Button>
           <Menu
             id="simple-menu"
-            anchorEl={anchorEl}
+            anchorEl={languageAnchorEl}
             keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
+            open={Boolean(languageAnchorEl)}
+            onClose={closeLanguageDropdown}
           >
             <MenuItem
-              onClick={handleMenuClick("/en")}
+              onClick={changeLanguage("/en")}
               selected={props.languageEn}
             >
               English
             </MenuItem>
             <MenuItem
-              onClick={handleMenuClick("/")}
+              onClick={changeLanguage("/")}
               selected={!props.languageEn}
             >
               Русский
@@ -111,48 +111,29 @@ export default function Header(props) {
         classes={{
           paper: classes.drawerPaper
         }}
-        onClose={handleDrawerClose}
+        onClose={closeDrawer}
       >
         <div className={classes.drawerHeader}>
           <Typography variant="h6" className={classes.drawerHeaderTitle}>
-            {siteTitle}
+            {title}
           </Typography>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={closeDrawer}>
             <ChevronLeftIcon />
           </IconButton>
         </div>
         <Divider />
         <List>
-          <ListItem button>
-            <ListItemIcon>
-              <FormatPaintIcon />
-            </ListItemIcon>
-            <ListItemText primary="Услуги" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <WorkIcon />
-            </ListItemIcon>
-            <ListItemText primary="Портфолио" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <SportsKabaddiIcon />
-            </ListItemIcon>
-            <ListItemText primary="Команда" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <InsertEmoticonIcon />
-            </ListItemIcon>
-            <ListItemText primary="Ценности" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <CallIcon />
-            </ListItemIcon>
-            <ListItemText primary="Контакты" />
-          </ListItem>
+          {props.drawerMenuItems.map(el => {
+            const Icon = el.iconComponent;
+            return (
+              <ListItem key={el.id} button onClick={openPageSection(el.id)}>
+                <ListItemIcon>
+                  <Icon />
+                </ListItemIcon>
+                <ListItemText primary={el.name} />
+              </ListItem>
+            )
+          })}
         </List>
       </Drawer>
     </div>
@@ -160,11 +141,17 @@ export default function Header(props) {
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-  languageEn: PropTypes.bool
+  title: PropTypes.string,
+  languageEn: PropTypes.bool,
+  drawerMenuItems: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    iconComponent: PropTypes.object
+  }))
 };
 
 Header.defaultProps = {
-  siteTitle: "",
-  languageEn: false
+  title: "",
+  languageEn: false,
+  drawerMenuItems: []
 };
