@@ -23,7 +23,7 @@ const SecondPage = () => {
   return (
     <Layout>
       <SEO title="Page two" />
-      <Header siteTitle={title} />
+      <Header siteTitle={title} languageEn={true} />
       <div
         style={{
           maxWidth: 960,

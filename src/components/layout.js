@@ -8,7 +8,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import Header from "./header";
 import "./layout.css";
 import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core";
@@ -33,7 +32,6 @@ const theme = createMuiTheme({
 
 const Layout = props => {
   const { children } = props;
-  console.log(111, props);
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -50,9 +48,10 @@ const Layout = props => {
     <ThemeProvider theme={theme}>
       <main>{children}</main>
       <footer style={{ maxWidth: 960, padding: `0px 1.0875rem 1.45rem` }}>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        © {new Date().getFullYear()}, Built with&nbsp;
+        <a href="https://www.gatsbyjs.org">Gatsby</a>,&nbsp;
+        <a href="https://reactjs.org/">React</a>,&nbsp;
+        <a href="https://material-ui.com">Material-UI</a>
       </footer>
     </ThemeProvider>
   );
