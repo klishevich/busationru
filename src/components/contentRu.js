@@ -83,6 +83,7 @@ export default function ContentRu(props) {
               <CardActions>
                 <a
                   href="https://github.com/klishevich"
+                  rel="noreferrer noopener"
                   target="_blank"
                   className={classes.href}
                 >
@@ -92,6 +93,7 @@ export default function ContentRu(props) {
                 </a>
                 <a
                   href="https://www.facebook.com/klishevich"
+                  rel="noreferrer noopener"
                   target="_blank"
                   className={classes.href}
                 >
@@ -205,7 +207,7 @@ export default function ContentRu(props) {
           </div>
           <div className={classes.contacts}>
             Telegram:{" "}
-            <a target="_blank" href="https://t.me/klishevich">
+            <a target="_blank" href="https://t.me/klishevich" rel="noreferrer noopener">
               @klishevich
             </a>
           </div>
