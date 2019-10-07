@@ -17,5 +17,15 @@ export const useStyles = makeStyles(theme => ({
   },
   dictum: {
     marginBottom: 30
+  },
+  card: {
+    maxWidth: 345
+  },
+  media: {
+    height: 250
+  },
+  href: {
+    color: "inherit",
+    textDecoration: "inherit"
   }
 }));

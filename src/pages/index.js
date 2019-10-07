@@ -15,9 +15,9 @@ import Footer from "../components/footer";
 
 const menuItems = [
   { id: "services", name: "Услуги", iconComponent: FormatPaintIcon },
-  { id: "portfolio", name: "Портфолио", iconComponent: WorkIcon },
   { id: "team", name: "Команда", iconComponent: SportsKabaddiIcon },
   { id: "values", name: "Ценности", iconComponent: InsertEmoticonIcon },
+  { id: "portfolio", name: "Портфолио", iconComponent: WorkIcon },
   { id: "contacts", name: "Контакты", iconComponent: CallIcon }
 ];
 

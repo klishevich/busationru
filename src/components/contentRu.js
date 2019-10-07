@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Link } from "gatsby";
 import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import michaelImg from "../images/team/michael2.jpg";
+import vadimImg from "../images/team/vadim.jpg";
+import mariaImg from "../images/team/mary.jpg";
 
 import { useStyles } from "./contentStyles";
-import Image from "./image";
 
 export default function ContentRu(props) {
   const classes = useStyles();
 
-  const { title } = props;
+  const [showEmail, setShowEmail] = useState(false);
 
   return (
     <div className={classes.root}>
@@ -37,53 +48,108 @@ export default function ContentRu(props) {
           </li>
         </ul>
       </div>
-      <div>
-        <a id="portfolio" className={classes.anchor} />
-        <Typography variant="h4">Портфолио</Typography>
-        <br />
-        <ul>
-          <li>
-            <b>Система для формирования отчетов по начислению зарплаты</b> для
-            компании из Нью-Йорка (React, Redux, Redux-Saga, Material-UI,
-            Devextreme, Reselect, Azure) - <b>май 2019 - по наст. время</b>
-          </li>
-          <li>
-            <b>Онлайн анкета для подключения клиентов</b> для одного крупного
-            российского банка (React, Redux, Redux-Saga, TypeScript, Formik,
-            Cypress, Node.js, Hapi) - <b>июнь 2017 - август 2019</b>
-          </li>
-          <li>
-            <b>Система для онлайн тестирования школьников</b> для американской
-            школьной системы K12 (React, Redux, Cypress, Ant Design, MongoDB,
-            Elastic Search) - <b>октябрь 2018 - апрель 2019</b>
-          </li>
-          <li>
-            <b>Система для онлайн курсов по программированию</b> внутренняя
-            разработка (React, Node.js, Hapi, MongoDB, Circle CI, Docker Swarm,
-            Linode) - <b>июль 2018 - сентябрь 2018</b>
-          </li>
-          <li>
-            <b>Система для проведения конференций</b> для компании из Австралии
-            (React, Node.js, Hapi, Knex, Postgres, AWS, Circle CI) -{" "}
-            <b>май 2018 - июнь 2018</b>
-          </li>
-        </ul>
-      </div>
-      <div>
+      <div style={{ marginBottom: 20 }}>
         <a id="team" className={classes.anchor} />
         <Typography variant="h4">Команда</Typography>
         <br />
-        <ul>
-          <li>
-            <b>Майкл</b> - JavaScript-разработчик / DevOps
-          </li>
-          <li>
-            <b>Вадим</b> - Android / Java-разработчик
-          </li>
-          <li>
-            <b>Катя</b> - Анализ данных / ML
-          </li>
-        </ul>
+        <p>
+          Мы небольшая распределенная команда, которая умеет слажено и
+          эффективно работать.
+        </p>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={4}>
+            <Card className={classes.card}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={michaelImg}
+                  title="Майкл"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h6" component="h2">
+                    Майкл - JavaScript
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    8 лет в IT индустрии, опыт работы в крупных компаниях:
+                    Альфа-Банк, ЦФТ и фриланса с клиентами из США и Европы на
+                    сайте Upwork
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <a
+                  href="https://github.com/klishevich"
+                  target="_blank"
+                  className={classes.href}
+                >
+                  <Button size="small" color="primary">
+                    Github
+                  </Button>
+                </a>
+                <a
+                  href="https://www.facebook.com/klishevich"
+                  target="_blank"
+                  className={classes.href}
+                >
+                  <Button size="small" color="primary">
+                    Facebook
+                  </Button>
+                </a>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Card className={classes.card}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={vadimImg}
+                  title="Вадим"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h6" component="h2">
+                    Вадим - Android / Java
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    10 лет в IT, опыт работы в российских компаниях и на
+                    фрилансе с клиентами из США и Европы на сайте Upwork.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Card className={classes.card}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={mariaImg}
+                  title="Мария"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h6" component="h2">
+                    Мария - Анализ данных
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    5 лет работы в различных российских компаниях SQL, Python
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Grid>
+        </Grid>
       </div>
       <div>
         <a id="values" className={classes.anchor} />
@@ -93,6 +159,38 @@ export default function ContentRu(props) {
           <li>Долгосрочные и доверительные отношения</li>
           <li>Работа в удовольствие</li>
           <li>Скорость и открытость к новым решениям</li>
+        </ul>
+      </div>
+      <div>
+        <a id="portfolio" className={classes.anchor} />
+        <Typography variant="h4">Портфолио</Typography>
+        <br />
+        <ul>
+          <li>
+            <b>Система для формирования отчетов по начислению зарплаты</b> для
+            компании из Нью-Йорка (React, Redux, Redux-Saga, Material-UI,
+            Devextreme, Reselect, Azure) - <i>май 2019 - по наст. время</i>
+          </li>
+          <li>
+            <b>Онлайн анкета для подключения клиентов</b> для одного крупного
+            российского банка (React, Redux, Redux-Saga, TypeScript, Formik,
+            Cypress, Node.js, Hapi) - <i>июнь 2017 - август 2019</i>
+          </li>
+          <li>
+            <b>Система для онлайн тестирования школьников</b> для американской
+            школьной системы K12 (React, Redux, Cypress, Ant Design, MongoDB,
+            Elastic Search) - <i>октябрь 2018 - апрель 2019</i>
+          </li>
+          <li>
+            <b>Система для онлайн курсов по программированию</b> внутренняя
+            разработка (React, Node.js, Hapi, MongoDB, Circle CI, Docker Swarm,
+            Linode) - <i>июль 2018 - сентябрь 2018</i>
+          </li>
+          <li>
+            <b>Система для проведения конференций</b> для компании из Австралии
+            (React, Node.js, Hapi, Knex, Postgres, AWS, Circle CI) -{" "}
+            <i>май 2018 - июнь 2018</i>
+          </li>
         </ul>
       </div>
       <div>
@@ -111,7 +209,22 @@ export default function ContentRu(props) {
               @klishevich
             </a>
           </div>
-          <div className={classes.contacts}>Email: info@busation.ru</div>
+          <div className={classes.contacts}>
+            Email:{" "}
+            {!showEmail && (
+              <Button
+                variant="contained"
+                color="primary"
+                size="small"
+                onClick={() => setShowEmail(true)}
+              >
+                Показать
+              </Button>
+            )}
+            {showEmail && (
+              <a href="mailto:info@busation.ru">info@busation.ru</a>
+            )}
+          </div>
         </div>
       </div>
       <div style={{ marginTop: 30 }}>

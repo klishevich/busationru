@@ -1,204 +1,250 @@
-import React from "react";
+import React, { useState } from "react"
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 
 import { useStyles } from "./contentStyles";
-import Image from "./image";
+import Grid from "@material-ui/core/Grid";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardMedia from "@material-ui/core/CardMedia";
+import michaelImg from "../images/team/michael2.jpg";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import Button from "@material-ui/core/Button";
+import vadimImg from "../images/team/vadim.jpg";
+import mariaImg from "../images/team/mary.jpg";
 
 export default function ContentEn(props) {
   const classes = useStyles();
 
-  const { title } = props;
+  const [showEmail, setShowEmail] = useState(false);
 
   return (
     <div className={classes.root}>
-      <Typography variant="h6">{title}</Typography>
-      <p>Welcome to your new Gatsby site.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
+      <div>
+        <a id="services" className={classes.anchor} />
+        <Typography variant="h4">Services</Typography>
+        <br />
+        <ul>
+          <li>
+            We develop Frontend with <b>React</b> (Redux, Cypress, TypeScript)
+          </li>
+          <li>
+            and Backend with <b>Node.js</b> (Hapi, MongoDB, Postgres, Elastic
+            Search)
+          </li>
+          <li>
+            Make mobile development (<b>Android, iOS</b>)
+          </li>
+          <li>
+            Set up <b>Infrastructure and Deploy</b> applications (AWS, Yandex
+            Cloud, Docker Swarm, Circle CI, Linode)
+          </li>
+          <li>
+            Provide <b>Data Analysis and Machine Learning</b> (SQL, Python,
+            NumPy, Scikit-learn)
+          </li>
+        </ul>
       </div>
-      <br id="services" />
-      <Typography variant="h6">Услуги</Typography>
-      <p>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet
-          consectetur cum cumque dolor eaque eligendi enim explicabo, ipsum iste
-          labore necessitatibus quasi quibusdam quod repellat suscipit, tempore
-          totam veniam.
-        </span>
-        <span>
-          Ab, atque consequuntur deleniti distinctio eius eum ex facere harum
-          inventore, itaque maxime odit optio quisquam ratione sapiente tenetur
-          velit. Adipisci aperiam ea illum laudantium. Asperiores laborum neque
-          nesciunt reprehenderit.
-        </span>
-        <span>
-          Commodi consequatur dolorem magnam omnis? A accusamus asperiores autem
-          consectetur cum delectus dolore dolorem doloribus dolorum ea, earum et
-          facere hic illum in molestias nisi numquam quidem quod repellendus
-          sequi?
-        </span>
-        <span>
-          Cumque esse impedit quam voluptate. Accusamus aspernatur ducimus ex
-          laudantium nihil pariatur quia sit soluta! Accusamus aperiam autem
-          dolorem doloremque et fugit illo laboriosam libero necessitatibus
-          temporibus tenetur, voluptas. Nesciunt.
-        </span>
-        <span>
-          Accusantium alias assumenda autem beatae deserunt dolor eos fuga
-          fugiat ipsam ipsum iusto magni molestiae natus nemo nisi non nulla
-          omnis quaerat quasi quis, quod saepe totam ullam voluptas voluptatum!
-        </span>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet
-          consectetur cum cumque dolor eaque eligendi enim explicabo, ipsum iste
-          labore necessitatibus quasi quibusdam quod repellat suscipit, tempore
-          totam veniam.
-        </span>
-        <span>
-          Ab, atque consequuntur deleniti distinctio eius eum ex facere harum
-          inventore, itaque maxime odit optio quisquam ratione sapiente tenetur
-          velit. Adipisci aperiam ea illum laudantium. Asperiores laborum neque
-          nesciunt reprehenderit.
-        </span>
-        <span>
-          Commodi consequatur dolorem magnam omnis? A accusamus asperiores autem
-          consectetur cum delectus dolore dolorem doloribus dolorum ea, earum et
-          facere hic illum in molestias nisi numquam quidem quod repellendus
-          sequi?
-        </span>
-        <span>
-          Cumque esse impedit quam voluptate. Accusamus aspernatur ducimus ex
-          laudantium nihil pariatur quia sit soluta! Accusamus aperiam autem
-          dolorem doloremque et fugit illo laboriosam libero necessitatibus
-          temporibus tenetur, voluptas. Nesciunt.
-        </span>
-        <span>
-          Accusantium alias assumenda autem beatae deserunt dolor eos fuga
-          fugiat ipsam ipsum iusto magni molestiae natus nemo nisi non nulla
-          omnis quaerat quasi quis, quod saepe totam ullam voluptas voluptatum!
-        </span>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet
-          consectetur cum cumque dolor eaque eligendi enim explicabo, ipsum iste
-          labore necessitatibus quasi quibusdam quod repellat suscipit, tempore
-          totam veniam.
-        </span>
-        <span>
-          Ab, atque consequuntur deleniti distinctio eius eum ex facere harum
-          inventore, itaque maxime odit optio quisquam ratione sapiente tenetur
-          velit. Adipisci aperiam ea illum laudantium. Asperiores laborum neque
-          nesciunt reprehenderit.
-        </span>
-        <span>
-          Commodi consequatur dolorem magnam omnis? A accusamus asperiores autem
-          consectetur cum delectus dolore dolorem doloribus dolorum ea, earum et
-          facere hic illum in molestias nisi numquam quidem quod repellendus
-          sequi?
-        </span>
-        <span>
-          Cumque esse impedit quam voluptate. Accusamus aspernatur ducimus ex
-          laudantium nihil pariatur quia sit soluta! Accusamus aperiam autem
-          dolorem doloremque et fugit illo laboriosam libero necessitatibus
-          temporibus tenetur, voluptas. Nesciunt.
-        </span>
-        <span>
-          Accusantium alias assumenda autem beatae deserunt dolor eos fuga
-          fugiat ipsam ipsum iusto magni molestiae natus nemo nisi non nulla
-          omnis quaerat quasi quis, quod saepe totam ullam voluptas voluptatum!
-        </span>
-      </p>
-      <br id="portfolio" />
-      <Typography variant="h6">Портфолио</Typography>
-      <p>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet
-          consectetur cum cumque dolor eaque eligendi enim explicabo, ipsum iste
-          labore necessitatibus quasi quibusdam quod repellat suscipit, tempore
-          totam veniam.
-        </span>
-        <span>
-          Ab, atque consequuntur deleniti distinctio eius eum ex facere harum
-          inventore, itaque maxime odit optio quisquam ratione sapiente tenetur
-          velit. Adipisci aperiam ea illum laudantium. Asperiores laborum neque
-          nesciunt reprehenderit.
-        </span>
-        <span>
-          Commodi consequatur dolorem magnam omnis? A accusamus asperiores autem
-          consectetur cum delectus dolore dolorem doloribus dolorum ea, earum et
-          facere hic illum in molestias nisi numquam quidem quod repellendus
-          sequi?
-        </span>
-        <span>
-          Cumque esse impedit quam voluptate. Accusamus aspernatur ducimus ex
-          laudantium nihil pariatur quia sit soluta! Accusamus aperiam autem
-          dolorem doloremque et fugit illo laboriosam libero necessitatibus
-          temporibus tenetur, voluptas. Nesciunt.
-        </span>
-        <span>
-          Accusantium alias assumenda autem beatae deserunt dolor eos fuga
-          fugiat ipsam ipsum iusto magni molestiae natus nemo nisi non nulla
-          omnis quaerat quasi quis, quod saepe totam ullam voluptas voluptatum!
-        </span>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet
-          consectetur cum cumque dolor eaque eligendi enim explicabo, ipsum iste
-          labore necessitatibus quasi quibusdam quod repellat suscipit, tempore
-          totam veniam.
-        </span>
-        <span>
-          Ab, atque consequuntur deleniti distinctio eius eum ex facere harum
-          inventore, itaque maxime odit optio quisquam ratione sapiente tenetur
-          velit. Adipisci aperiam ea illum laudantium. Asperiores laborum neque
-          nesciunt reprehenderit.
-        </span>
-        <span>
-          Commodi consequatur dolorem magnam omnis? A accusamus asperiores autem
-          consectetur cum delectus dolore dolorem doloribus dolorum ea, earum et
-          facere hic illum in molestias nisi numquam quidem quod repellendus
-          sequi?
-        </span>
-        <span>
-          Cumque esse impedit quam voluptate. Accusamus aspernatur ducimus ex
-          laudantium nihil pariatur quia sit soluta! Accusamus aperiam autem
-          dolorem doloremque et fugit illo laboriosam libero necessitatibus
-          temporibus tenetur, voluptas. Nesciunt.
-        </span>
-        <span>
-          Accusantium alias assumenda autem beatae deserunt dolor eos fuga
-          fugiat ipsam ipsum iusto magni molestiae natus nemo nisi non nulla
-          omnis quaerat quasi quis, quod saepe totam ullam voluptas voluptatum!
-        </span>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet
-          consectetur cum cumque dolor eaque eligendi enim explicabo, ipsum iste
-          labore necessitatibus quasi quibusdam quod repellat suscipit, tempore
-          totam veniam.
-        </span>
-        <span>
-          Ab, atque consequuntur deleniti distinctio eius eum ex facere harum
-          inventore, itaque maxime odit optio quisquam ratione sapiente tenetur
-          velit. Adipisci aperiam ea illum laudantium. Asperiores laborum neque
-          nesciunt reprehenderit.
-        </span>
-        <span>
-          Commodi consequatur dolorem magnam omnis? A accusamus asperiores autem
-          consectetur cum delectus dolore dolorem doloribus dolorum ea, earum et
-          facere hic illum in molestias nisi numquam quidem quod repellendus
-          sequi?
-        </span>
-        <span>
-          Cumque esse impedit quam voluptate. Accusamus aspernatur ducimus ex
-          laudantium nihil pariatur quia sit soluta! Accusamus aperiam autem
-          dolorem doloremque et fugit illo laboriosam libero necessitatibus
-          temporibus tenetur, voluptas. Nesciunt.
-        </span>
-        <span>
-          Accusantium alias assumenda autem beatae deserunt dolor eos fuga
-          fugiat ipsam ipsum iusto magni molestiae natus nemo nisi non nulla
-          omnis quaerat quasi quis, quod saepe totam ullam voluptas voluptatum!
-        </span>
-      </p>
+      <div style={{ marginBottom: 20 }}>
+        <a id="team" className={classes.anchor} />
+        <Typography variant="h4">Our Team</Typography>
+        <br />
+        <p>We are small but very efficient team of remote workers.</p>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={4}>
+            <Card className={classes.card}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={michaelImg}
+                  title="Michael"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h6" component="h2">
+                    Michael - JavaScript
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    8 years in IT and 4 years with React and Node.js. I worked
+                    for big companies (Alfa-Bank, CFT) and have experience
+                    working remotely for clients from USA and Europe on Upwork.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <a
+                  href="https://github.com/klishevich"
+                  target="_blank"
+                  className={classes.href}
+                >
+                  <Button size="small" color="primary">
+                    Github
+                  </Button>
+                </a>
+                <a
+                  href="https://www.facebook.com/klishevich"
+                  target="_blank"
+                  className={classes.href}
+                >
+                  <Button size="small" color="primary">
+                    Facebook
+                  </Button>
+                </a>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Card className={classes.card}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={vadimImg}
+                  title="Vadim"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h6" component="h2">
+                    Vadim - Android / Java
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    10 years in IT and 3 years with Android. Experience working
+                    remotely for clients from USA and Europe on Upwork.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Card className={classes.card}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={mariaImg}
+                  title="Mary"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h6" component="h2">
+                    Mary - Data Scientist
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    5 years experience working with SQL and Python
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Grid>
+        </Grid>
+      </div>
+      <div>
+        <a id="values" className={classes.anchor} />
+        <Typography variant="h4">Our Values</Typography>
+        <br />
+        <ul>
+          <li>Longterm relationship filled with trust</li>
+          <li>Pleasure from work</li>
+          <li>Move fast and be openminded</li>
+        </ul>
+      </div>
+      <div>
+        <a id="portfolio" className={classes.anchor} />
+        <Typography variant="h4">Portfolio</Typography>
+        <br />
+        <ul>
+          <li>
+            <b>Payroll services</b> for company from New-York (React, Redux,
+            Redux-Saga, Material-UI, Devextreme, Reselect, Azure) -{" "}
+            <i>May 2019 - till now</i>
+          </li>
+          <li>
+            <b>Onboarding online application form</b> for big russian bank
+            (React, Redux, Redux-Saga, TypeScript, Formik, Cypress, Node.js,
+            Hapi) - <i>June 2017 - August 2019</i>
+          </li>
+          <li>
+            <b>Online testing application</b> for US schools K12 system (React,
+            Redux, Cypress, Ant Design, MongoDB, Elastic Search) -{" "}
+            <i>October 2018 - April 2019</i>
+          </li>
+          <li>
+            <b>Platform for online programming education</b> internal project
+            (React, Node.js, Hapi, MongoDB, Circle CI, Docker Swarm, Linode) -{" "}
+            <i>July 2018 - September 2018</i>
+          </li>
+          <li>
+            <b>System to support holding conferences </b> for company from
+            Australia (React, Node.js, Hapi, Knex, Postgres, AWS, Circle CI) -{" "}
+            <i>May 2018 - June 2018</i>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <a id="contacts" className={classes.anchor} />
+        <Typography variant="h4">Contacts</Typography>
+        <br />
+        <div>
+          <div className={classes.contacts}>Business-Optimization, LLC</div>
+          <div className={classes.contacts}>Michael Klishevich - CEO</div>
+          <div className={classes.contacts}>
+            Тел.: <a href="tel:+79165926645">+7 916 592 6645</a>
+          </div>
+          <div className={classes.contacts}>
+            Telegram:{" "}
+            <a target="_blank" href="https://t.me/klishevich">
+              @klishevich
+            </a>
+          </div>
+          <div className={classes.contacts}>
+            Email:{" "}
+            {!showEmail && (
+              <Button
+                variant="contained"
+                color="primary"
+                size="small"
+                onClick={() => setShowEmail(true)}
+              >
+                Show
+              </Button>
+            )}
+            {showEmail && (
+              <a href="mailto:info@busation.ru">info@busation.ru</a>
+            )}
+          </div>
+        </div>
+      </div>
+      <div style={{ marginTop: 30 }}>
+        <Typography variant="h4">Aphorisms</Typography>
+        <br />
+        <div>
+          <div className={classes.dictum}>
+            "A man of honor helps others to realize their best aims, but not
+            their worst desires. A petty-minded man does the opposite." -{" "}
+            <i>Confucius</i>
+          </div>
+          <div className={classes.dictum}>
+            "I'm the one that's got to die when it's time for me to die, so let
+            me live my life the way I want to." - <i>Jimi Hendrix</i>
+          </div>
+          <div className={classes.dictum}>
+            "Good friends, good books, and a sleepy conscience: this is the
+            ideal life." - <i>Mark Twain</i>
+          </div>
+          <div className={classes.dictum}>
+            "Life is like riding a bicycle. To keep your balance, you must keep
+            moving." - <i>Albert Einstein</i>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

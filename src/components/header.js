@@ -53,8 +53,14 @@ export default function Header(props) {
 
   const openPageSection = sectionId => () => {
     setDrawerOpen(false);
-    navigate(`/#${sectionId}`, { replace: true });
+    if (props.languageEn) {
+      navigate(`/en/#${sectionId}`, { replace: true });
+    } else {
+      navigate(`/#${sectionId}`, { replace: true });
+    }
   };
+
+  const currentLanguage = props.languageEn ? "ENGLISH" : "РУССКИЙ";
 
   return (
     <div className={classes.root}>
@@ -79,6 +85,7 @@ export default function Header(props) {
             onClick={openLanguageDropdown}
           >
             <LanguageIcon />
+            <span className={classes.currentLanguage}>{currentLanguage}</span>
             <ArrowDownIcon />
           </Button>
           <Menu
@@ -132,7 +139,7 @@ export default function Header(props) {
                 </ListItemIcon>
                 <ListItemText primary={el.name} />
               </ListItem>
-            )
+            );
           })}
         </List>
       </Drawer>
@@ -143,11 +150,13 @@ export default function Header(props) {
 Header.propTypes = {
   title: PropTypes.string,
   languageEn: PropTypes.bool,
-  drawerMenuItems: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-    iconComponent: PropTypes.object
-  }))
+  drawerMenuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      iconComponent: PropTypes.object
+    })
+  )
 };
 
 Header.defaultProps = {
