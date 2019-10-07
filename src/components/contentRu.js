@@ -29,21 +29,21 @@ export default function ContentRu(props) {
         <br />
         <ul>
           <li>
-            Пилим Frontend на <b>React</b> (Redux, Cypress, TypeScript)
+            Frontend разработка на <b>React</b> (Redux, Cypress, TypeScript)
           </li>
           <li>
-            и Backend на <b>Node.js</b> (Hapi, MongoDB, Postgres, Elastic
+            Backend разработка на <b>Node.js</b> (Hapi, MongoDB, Postgres, Elastic
             Search)
           </li>
           <li>
-            Мобильно разрабатываем (<b>Android, iOS</b>)
+            Мобильная разработка (<b>Android, iOS</b>)
           </li>
           <li>
-            <b>Поднимаем сервера и облака</b> (AWS, Yandex Cloud, Docker Swarm,
+            <b>Настройка инфраструктуры и равзвертывание приложений</b> (AWS, Yandex Cloud, Docker Swarm,
             Circle CI, Linode)
           </li>
           <li>
-            <b>Анализируем данные и обучаем машины</b> (SQL, Python, NumPy,
+            <b>Анализ данных и машинное обучение</b> (SQL, Python, NumPy,
             Scikit-learn)
           </li>
         </ul>
@@ -158,9 +158,9 @@ export default function ContentRu(props) {
         <Typography variant="h4">Ценности</Typography>
         <br />
         <ul>
-          <li>Долгосрочные и доверительные отношения</li>
-          <li>Работа в удовольствие</li>
-          <li>Скорость и открытость к новым решениям</li>
+          <li>Долгосрочные отношения, создающие доверие и партнерство</li>
+          <li>Усердная работа, потому что мы делаем то что любим</li>
+          <li>Оперативность и открытость к новым решениям</li>
         </ul>
       </div>
       <div>
@@ -184,7 +184,7 @@ export default function ContentRu(props) {
             Elastic Search) - <i>октябрь 2018 - апрель 2019</i>
           </li>
           <li>
-            <b>Система для онлайн курсов по программированию</b> внутренняя
+            <b>Система для онлайн курсов по программированию</b>, внутренняя
             разработка (React, Node.js, Hapi, MongoDB, Circle CI, Docker Swarm,
             Linode) - <i>июль 2018 - сентябрь 2018</i>
           </li>
@@ -230,7 +230,7 @@ export default function ContentRu(props) {
         </div>
       </div>
       <div style={{ marginTop: 30 }}>
-        <Typography variant="h4">Афоризмы</Typography>
+        <Typography variant="h4">Мотивирующие фразы</Typography>
         <br />
         <div>
           <div className={classes.dictum}>

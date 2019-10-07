@@ -27,30 +27,27 @@ export default function ContentEn(props) {
         <br />
         <ul>
           <li>
-            We develop Frontend with <b>React</b> (Redux, Cypress, TypeScript)
+            Development of frontend with <b>React</b> (Redux, Cypress, TypeScript)
           </li>
           <li>
-            and Backend with <b>Node.js</b> (Hapi, MongoDB, Postgres, Elastic
-            Search)
+            Development of backend with <b>Node.js</b> (Hapi, MongoDB, Postgres, Elastic Search)
           </li>
           <li>
-            Make mobile development (<b>Android, iOS</b>)
+            Mobile development (<b>Android, iOS</b>)
           </li>
           <li>
-            Set up <b>Infrastructure and Deploy</b> applications (AWS, Yandex
-            Cloud, Docker Swarm, Circle CI, Linode)
+            Set up of <b>infrastructure and deployment</b> of applications (AWS, Yandex Cloud, Docker Swarm, Circle CI, Linode)
           </li>
           <li>
-            Provide <b>Data Analysis and Machine Learning</b> (SQL, Python,
-            NumPy, Scikit-learn)
+            <b>Data analysis and machine learning</b> (SQL, Python, NumPy, Scikit-learn)
           </li>
         </ul>
       </div>
       <div style={{ marginBottom: 20 }}>
         <a id="team" className={classes.anchor} />
-        <Typography variant="h4">Our Team</Typography>
+        <Typography variant="h4">Our team</Typography>
         <br />
-        <p>We are small but very efficient team of remote workers.</p>
+        <p>We are a small but very efficient team of remote workers.</p>
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>
             <Card className={classes.card}>
@@ -69,9 +66,7 @@ export default function ContentEn(props) {
                     color="textSecondary"
                     component="p"
                   >
-                    8 years in IT and 4 years with React and Node.js. I worked
-                    for big companies (Alfa-Bank, CFT) and have experience
-                    working remotely for clients from USA and Europe on Upwork.
+                    I have worked for 8 years in IT and for 4 years with React and Node.js. I worked for big companies (Alfa-Bank, CFT) and have experience working remotely for clients from the USA and Europe on Upwork.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -116,8 +111,7 @@ export default function ContentEn(props) {
                     color="textSecondary"
                     component="p"
                   >
-                    10 years in IT and 3 years with Android. Experience working
-                    remotely for clients from USA and Europe on Upwork.
+                    I have 10 years of experience in the IT sector and I’ve been working for 3 years with Android. I have experience working remotely for clients from the USA and Europe on Upwork.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -133,14 +127,14 @@ export default function ContentEn(props) {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="h2">
-                    Mary - Data Scientist
+                    Mary - data scientist
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    5 years experience working with SQL and Python
+                    I have 5 years experience working with SQL and Python
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -150,12 +144,12 @@ export default function ContentEn(props) {
       </div>
       <div>
         <a id="values" className={classes.anchor} />
-        <Typography variant="h4">Our Values</Typography>
+        <Typography variant="h4">Our values</Typography>
         <br />
         <ul>
-          <li>Longterm relationship filled with trust</li>
-          <li>Pleasure from work</li>
-          <li>Move fast and be openminded</li>
+          <li>Long-term relationships, creating trust and partnership</li>
+          <li>Being hard-working and committed because we do what we enjoy</li>
+          <li>Moving fast and being open-minded</li>
         </ul>
       </div>
       <div>
@@ -164,27 +158,27 @@ export default function ContentEn(props) {
         <br />
         <ul>
           <li>
-            <b>Payroll services</b> for company from New-York (React, Redux,
+            <b>Payroll services</b> for a company from New-York (React, Redux,
             Redux-Saga, Material-UI, Devextreme, Reselect, Azure) -{" "}
-            <i>May 2019 - till now</i>
+            <i>May 2019 - until now</i>
           </li>
           <li>
-            <b>Onboarding online application form</b> for big russian bank
+            <b>Online application form</b> for a big russian bank
             (React, Redux, Redux-Saga, TypeScript, Formik, Cypress, Node.js,
             Hapi) - <i>June 2017 - August 2019</i>
           </li>
           <li>
-            <b>Online testing application</b> for US schools K12 system (React,
+            <b>Online testing application</b> for US schools, K12 system (React,
             Redux, Cypress, Ant Design, MongoDB, Elastic Search) -{" "}
             <i>October 2018 - April 2019</i>
           </li>
           <li>
-            <b>Platform for online programming education</b> internal project
+            <b>Platform for online programming education</b>, internal project
             (React, Node.js, Hapi, MongoDB, Circle CI, Docker Swarm, Linode) -{" "}
             <i>July 2018 - September 2018</i>
           </li>
           <li>
-            <b>System to support holding conferences </b> for company from
+            <b>System to support holding conferences </b> for a company from
             Australia (React, Node.js, Hapi, Knex, Postgres, AWS, Circle CI) -{" "}
             <i>May 2018 - June 2018</i>
           </li>
@@ -225,7 +219,7 @@ export default function ContentEn(props) {
         </div>
       </div>
       <div style={{ marginTop: 30 }}>
-        <Typography variant="h4">Aphorisms</Typography>
+        <Typography variant="h4">Inspirational quotes</Typography>
         <br />
         <div>
           <div className={classes.dictum}>
