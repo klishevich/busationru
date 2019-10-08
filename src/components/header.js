@@ -82,6 +82,7 @@ export default function Header(props) {
             color="inherit"
             aria-controls="simple-menu"
             aria-haspopup="true"
+            aria-label="Change language"
             onClick={openLanguageDropdown}
           >
             <LanguageIcon />
