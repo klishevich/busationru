@@ -26,7 +26,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
-        short_name: `busation`,
+        short_name: `Busation`,
         start_url: `/`,
         background_color: `#1976d2`,
         theme_color: `#1976d2`,

@@ -12,14 +12,7 @@ import SEO from "../components/seo";
 import Header from "../components/header";
 import Content from "../components/contentEn";
 import Footer from "../components/footer";
-
-const menuItems = [
-  { id: "services", name: "Services", iconComponent: FormatPaintIcon },
-  { id: "team", name: "Team", iconComponent: SportsKabaddiIcon },
-  { id: "values", name: "Values", iconComponent: InsertEmoticonIcon },
-  { id: "portfolio", name: "Portfolio", iconComponent: WorkIcon },
-  { id: "contacts", name: "Contacts", iconComponent: CallIcon }
-];
+import { menuItemsEn } from "../constants/menuItems";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -42,7 +35,7 @@ const IndexPage = () => {
         title="React and Node.js development in Moscow"
         description="Business-Optimization company provide React, Node.js, mobile, iOS, Android development, DevOps, Data Analysis and Machine Learning in Moscow"
       />
-      <Header title={title} languageEn={true} drawerMenuItems={menuItems} />
+      <Header title={title} languageEn={true} drawerMenuItems={menuItemsEn} />
       <Content title={title} />
       <Footer />
     </Layout>

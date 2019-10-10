@@ -54,9 +54,9 @@ export default function Header(props) {
   const openPageSection = sectionId => () => {
     setDrawerOpen(false);
     if (props.languageEn) {
-      navigate(`/en/#${sectionId}`, { replace: true });
+      navigate(`/en/${sectionId}`, { replace: true });
     } else {
-      navigate(`/#${sectionId}`, { replace: true });
+      navigate(`/${sectionId}`, { replace: true });
     }
   };
 
@@ -134,7 +134,7 @@ export default function Header(props) {
           {props.drawerMenuItems.map(el => {
             const Icon = el.iconComponent;
             return (
-              <ListItem key={el.id} button onClick={openPageSection(el.id)}>
+              <ListItem key={el.path} button onClick={openPageSection(el.path)}>
                 <ListItemIcon>
                   <Icon />
                 </ListItemIcon>
@@ -153,7 +153,7 @@ Header.propTypes = {
   languageEn: PropTypes.bool,
   drawerMenuItems: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      path: PropTypes.string,
       name: PropTypes.string,
       iconComponent: PropTypes.object
     })
