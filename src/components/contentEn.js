@@ -12,7 +12,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
 import vadimImg from "../images/team/vadim.jpg";
-import mariaImg from "../images/team/mary.jpg";
+import maxImg from "../images/team/max2.jpg";
 
 export default function ContentEn(props) {
   const classes = useStyles();
@@ -59,7 +59,7 @@ export default function ContentEn(props) {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="h2">
-                    Michael - JavaScript
+                    Michael - JS/React/Node
                   </Typography>
                   <Typography
                     variant="body2"
@@ -104,7 +104,7 @@ export default function ContentEn(props) {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="h2">
-                    Vadim - Android / Java
+                    Vadim - Android/Java
                   </Typography>
                   <Typography
                     variant="body2"
@@ -122,19 +122,19 @@ export default function ContentEn(props) {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image={mariaImg}
-                  title="Mary"
+                  image={maxImg}
+                  title="Max"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="h2">
-                    Mary - data scientist
+                    Max - JS/React/Node
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    I have 5 years experience working with SQL and Python
+                    I have 2 years experience working with JavaScript, TypeScript, Node.js
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -160,27 +160,27 @@ export default function ContentEn(props) {
           <li>
             <b>Payroll services</b> for a company from New-York (React, Redux,
             Redux-Saga, Material-UI, Devextreme, Reselect, Azure) -{" "}
-            <i>May 2019 - until now</i>
+            <i>May 2022 - until now</i>
           </li>
           <li>
             <b>Online application form</b> for a big russian bank
             (React, Redux, Redux-Saga, TypeScript, Formik, Cypress, Node.js,
-            Hapi) - <i>June 2017 - August 2019</i>
+            Hapi) - <i>June 2020 - August 2022</i>
           </li>
           <li>
             <b>Online testing application</b> for US schools, K12 system (React,
             Redux, Cypress, Ant Design, MongoDB, Elastic Search) -{" "}
-            <i>October 2018 - April 2019</i>
+            <i>October 2020 - April 2021</i>
           </li>
           <li>
             <b>Platform for online programming education</b>, internal project
             (React, Node.js, Hapi, MongoDB, Circle CI, Docker Swarm, Linode) -{" "}
-            <i>July 2018 - September 2018</i>
+            <i>July 2020 - September 2020</i>
           </li>
           <li>
             <b>System to support holding conferences </b> for a company from
             Australia (React, Node.js, Hapi, Knex, Postgres, AWS, Circle CI) -{" "}
-            <i>May 2018 - June 2018</i>
+            <i>May 2020 - June 2020</i>
           </li>
         </ul>
       </div>
@@ -190,15 +190,8 @@ export default function ContentEn(props) {
         <br />
         <div>
           <div className={classes.contacts}>Business-Optimization, LLC</div>
-          <div className={classes.contacts}>Michael Klishevich - CEO</div>
           <div className={classes.contacts}>
             Тел.: <a href="tel:+79165926645">+7 916 592 6645</a>
-          </div>
-          <div className={classes.contacts}>
-            Telegram:{" "}
-            <a target="_blank" href="https://t.me/klishevich" rel="noreferrer noopener">
-              @klishevich
-            </a>
           </div>
           <div className={classes.contacts}>
             Email:{" "}
